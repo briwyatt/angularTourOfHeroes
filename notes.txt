@@ -1,0 +1,17 @@
+
+hero.service.ts 
+
+// "HeroService" could be sent to get the Hero data
+//  from anywhere:
+//ie:
+          // -a web service
+          // -local storage
+          // -mock data source
+
+
+mock-heroes.ts   -  moved the mock-data array to its own file ./                mock-heroes.ts
+app.component.ts -  created an uninitialized heroes property in                place where mock-heroes array was 
+
+hero.service.ts  - 
+
+
