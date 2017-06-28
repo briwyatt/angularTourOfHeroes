@@ -15,3 +15,7 @@ getHeroesSlowly(): Promise<Hero[]> {
     setTimeout(() => resolve(this.getHeroes()), 5000);
   });
 }
+}
+
+
+
