@@ -9,22 +9,13 @@ import { HeroService } from './hero.service';
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <my-heroes></myheroes>
-`
-  // <ul class="heroes">
-  //       <li *ngFor="let hero of heroes"
-  //         [class.selected]="hero === selectedHero"
-  //         (click)="onSelect(hero)">
-  //         <span class="badge">{{hero.id}}</span> {{hero.name}}
-  //       </li>
-  //     </ul>
-  //   </my-heroes>
-  // <hero-detail [hero]="selectedHero"></hero-detail>
-  // `,
-  styles: [`
+`,
+
+ styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
-    }`
+    }
     .heroes {
       margin: 0 0 2em 0;
       list-style-type: none;
