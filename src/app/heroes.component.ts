@@ -8,10 +8,16 @@ import { HeroService } from './hero.service';
   template: `
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
-    <my-heroes></myheroes>
-`,
-
- styles: [`
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </li>
+    </ul>
+    <hero-detail [hero]="selectedHero"></hero-detail>
+  `,
+  styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
@@ -60,17 +66,17 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-  providers: []
+  providers: [HeroService]
 })
-export class HeroesComponent implements OnItit {
+export class HeroesComponent implements OnInit {
+  title = 'Tour of Heroes';
   heroes: Hero[];
   selectedHero: Hero;
 
   constructor(private heroService: HeroService) { }
 
   getHeroes(): void {
-    this.heroService.getHeroesSlowly()
-    .then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   ngOnInit(): void {
